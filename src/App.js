@@ -5,9 +5,9 @@ function App() {
     <div className="body">
       <article>
         <div class="group">
-          <button>Left</button>
-          <button>Middle</button>
-          <button>Right</button>
+          <button class="outline">Left</button>
+          <button class="outline">Middle</button>
+          <button class="outline">Right</button>
         </div>
       </article>
     </div>

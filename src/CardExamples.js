@@ -86,4 +86,18 @@ function ButtonGroup() {
   );
 }
 
+function ButtonGroupOutline() {
+  return (
+    <div className="body">
+      <article>
+        <div class="group">
+          <button class="outline">Left</button>
+          <button class="outline">Middle</button>
+          <button class="outline">Right</button>
+        </div>
+      </article>
+    </div>
+  );
+}
+
 export default App;

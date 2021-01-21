@@ -128,11 +128,25 @@ button {
   width: fit-content;
 
   margin: 3px;
+
+  &.outline {
+    background: white;
+    color: $link-color;
+    border-color: $link-color;
+    border: $link-color 1px solid;
+    margin: 2px;
+    &:not(:last-child) {
+      border-right: 0;
+    }
+  }
+
   &:hover {
     background: darken($link-color, 10%);
+    color: white;
   }
   &:focus {
     background: darken($link-color, 10%);
+    color: white;
     outline: unset;
     border: light($link-color) 3px solid;
     margin: unset;

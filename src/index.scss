@@ -1,0 +1,143 @@
+@function light($color) {
+  @return lighten($color, 20%);
+}
+
+@function lighter($color) {
+  @return lighten($color, 40%);
+}
+
+@function dark($color) {
+  @return darken($color, 20%);
+}
+
+@function darker($color) {
+  @return darken($color, 40%);
+}
+
+// Variables
+$link-color: #0d6efd;
+$border-color: #8080806e;
+
+* {
+  font-family: sans-serif;
+  transition: color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+}
+
+.muted {
+  color: #00000088;
+}
+
+.body {
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+// meta classes
+.--padding-light {
+  padding: 10px;
+}
+
+.--padding {
+  padding: 15px;
+}
+
+.--border-radius {
+  border-radius: 3px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  font-weight: 600;
+}
+@for $i from 1 through 6 {
+  :not(header) > h#{$i} {
+    margin-bottom: 15px;
+  }
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+// -- CARD --
+
+// base article styling
+article {
+  @extend .--border-radius;
+  display: flex;
+  flex-direction: column;
+  border: $border-color 1px solid;
+}
+
+// children borders & padding
+article {
+  >*:not(img) {
+    @extend .--padding;
+  }
+
+  >:not(:last-child) {
+    border-bottom: $border-color 1px solid;
+  }
+}
+
+// -- Card children --
+article {
+  header, footer {
+    background: rgba(128, 128, 128, 0.075);
+  }
+  a {
+    color: $link-color;
+    &:hover {
+      text-decoration: unset;
+      color: dark($link-color)
+    }
+    +a {
+      margin-left: 1rem;
+    }
+  }
+  p {
+    margin-top: 0;
+  }
+  &.center {
+    text-align: center;
+    button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  &.right {
+    text-align: right;
+    button {
+      margin-left: auto;
+    }
+  }
+}
+
+// -- Button
+
+button {
+  @extend .--border-radius;
+  @extend .--padding-light;
+  background: $link-color;
+  color: white;
+  border: none;
+  width: fit-content;
+
+  margin: 3px;
+
+  &:hover {
+    background: darken($link-color, 10%);
+  }
+  &:focus {
+    background: darken($link-color, 10%);
+    outline: unset;
+    border: light($link-color) 3px solid;
+    margin: unset;
+    @extend .--border-radius;
+  }
+}
+

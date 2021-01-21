@@ -4,19 +4,11 @@ function App() {
   return (
     <div className="body">
       <article>
-        <header>Featured</header>
-        <div>
-          <h3>Special title treatment</h3>  
-          <p>
-            With supporting text below as a natural lead-in to additional content.
-          </p>
-          <button>
-            Go Somewhere
-          </button>
+        <div class="group">
+          <button>Left</button>
+          <button>Middle</button>
+          <button>Right</button>
         </div>
-        <footer className="muted">
-          2 days ago
-        </footer>
       </article>
     </div>
   );

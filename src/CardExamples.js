@@ -72,4 +72,18 @@ function CenterAndMuted() {
   );
 }
 
+function ButtonGroup() {
+  return (
+    <div className="body">
+      <article>
+        <div class="group">
+          <button>Left</button>
+          <button>Middle</button>
+          <button>Right</button>
+        </div>
+      </article>
+    </div>
+  );
+}
+
 export default App;

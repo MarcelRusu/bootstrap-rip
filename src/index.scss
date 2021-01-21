@@ -128,7 +128,6 @@ button {
   width: fit-content;
 
   margin: 3px;
-
   &:hover {
     background: darken($link-color, 10%);
   }
@@ -141,3 +140,27 @@ button {
   }
 }
 
+.group {
+  display: flex;
+  flex-direction: row;
+  button {
+    margin: 0;
+    border-radius: 0;
+    &:first-child {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    &:last-child {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    &:focus {
+      background: darken($link-color, 10%);
+      outline: unset;
+      box-shadow: #2196f37a 0px 0 0px 3px;
+      z-index: 2;
+      border: none;
+      margin: unset;
+    }
+  }
+}
